@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: linear-gradient(315deg, #C2E9FB 0%, #A1C4FD 100%);
+    --bg-btn: hsla(240, 81%, 71%, 1);
+    --text-color: hsla(240, 27%, 28%, 1);
+    --btn-color: hsla(0, 0%, 100%, 1);
+    --bg-input: #DCE2E9;
+
+    --main-font: 'DM Sans', sans-serif;
+    --secondary-font: 'Montserrat', sans-serif;
+
+
+    --bg-btn-hover: rgb(145, 145, 239);
+
+    font-size: 62.5%;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: var(--main-font);
+    font-size: 1.6rem;
+}
+
+main button {
+    cursor: pointer;
+}
+
+.card {
+    border-radius: 6px;
+    background: var(--btn-color);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.10);
+    padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+
+    width: min(43rem, 90%);
+    /* min-height: 28rem; */
+    margin-top: -12rem;
+
+    text-align: center;
+}
+
+/* screen1 */
+.hide {
+    display: none;
+}
+
+h1 {
+    color: var(--text-color);
+    font-family: var(--secondary-font);
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text-color);
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+    margin: 1.6rem 0 4.8rem;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    height: 6.5rem;
+}
+
+.btn button {
+    border-radius: 0px 4px 4px 0px;
+    background: var(--bg-btn);
+
+    padding: 1.6rem;
+
+    color: var(--btn-color);
+    font-weight: bold;
+    border: none;
+}
+
+.screen2 button:hover, .screen1 button:hover {
+    background: var(--bg-btn-hover);
+}
+
+
+.btn input {
+    border-radius: 4px 0px 0px 4px;
+    background: var(--bg-input);
+    padding: 1.6rem;
+    max-width: 4rem;
+    border: none;
+
+    color: var(--text-color);
+}
+
+/* screen 2 */
+
+h2 {
+    color: var(--text-color);
+    font-family: var(--main-font);
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 150%;
+    margin-bottom: 3.3rem;
+}
+
+.screen2 button {
+    border-radius: 4px;
+    background: var(--bg-btn);
+    color: var(--btn-color);
+    padding: 1.6rem;
+    border: none;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+@media (min-width: 1500px) {
+    .card {
+        width: 50rem;
+        height: 30rem;
+    }
+
+    h1, h2 {
+        font-size: 3.2rem;
+    }
+
+    h2 {
+        margin-bottom: 5rem;
+    }
+
+    p, .btn button,  input, .screen2 button {
+        font-size: 2.4rem
+    }
+
+    .btn input {
+        max-width: 5.8rem;
+        text-align: center;
+    }
+
+    .screen2 button {
+        padding: 2rem;
+    }
+}
+
+@keyframes wrongAwnserInput {
+    0% {
+        border: 1px solid red;
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    100% {
+        border: none;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
+
+@keyframes wrongAwnserButton {
+    0% {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    100% {
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
